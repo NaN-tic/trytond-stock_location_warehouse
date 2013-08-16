@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-#This file is part of Tryton.  The COPYRIGHT file at the top level of
-#this repository contains the full copyright notices and license terms.
+# encoding: utf-8
 
 from setuptools import setup
 import re
@@ -44,10 +43,8 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         'and Storage locations.'),
     long_description=read('README'),
     author='NaN·tic',
-    # TODO: put the Bitbucket URL
-    url='http://www.tryton.org/',
-    download_url="http://downloads.tryton.org/" +
-        info.get('version', '0.0.1').rsplit('.', 1)[0] + '/',
+    url='http://www.nan-tic.com/',
+    download_url="https://bitbucket.org/trytonspain/aeat_303",
     package_dir={'trytond.modules.stock_location_warehouse': '.'},
     packages=[
         'trytond.modules.stock_location_warehouse',

@@ -1,7 +1,7 @@
-nantic_stock_location_warehouse
-===============================
+stock_location_warehouse
+========================
 
-The farm module of the Tryton application platform.
+This Module runs with the Tryton application platform.
 
 Installing
 ----------
@@ -14,7 +14,8 @@ Support
 If you encounter any problems with Tryton, please don't hesitate to ask
 questions on the Tryton bug tracker, mailing list, wiki or IRC channel:
 
-  http://bugs.tryton.org/
+  http://doc.tryton-erp.es/
+  http://bitbucket.org/trytonspain/trytond-aeat_303
   http://groups.tryton.org/
   http://wiki.tryton.org/
   irc://irc.freenode.net/tryton
@@ -30,6 +31,6 @@ Copyright
 See COPYRIGHT
 
 
-For more information please visit the Tryton web site:
+For more information please visit the NaN·tic web site:
 
-  http://www.tryton.org/
+  http://www.nan-tic.com/
