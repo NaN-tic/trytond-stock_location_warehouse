@@ -44,7 +44,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
     long_description=read('README'),
     author='NaN·tic',
     url='http://www.nan-tic.com/',
-    download_url="https://bitbucket.org/trytonspain/aeat_303",
+    download_url="https://bitbucket.org/nantic/trytond-%s" % MODULE,
     package_dir={'trytond.modules.stock_location_warehouse': '.'},
     packages=[
         'trytond.modules.stock_location_warehouse',
