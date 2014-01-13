@@ -35,6 +35,10 @@ class Location(ModelSQL, ModelView):
         for warehouse in cls.search([('type', '=', 'warehouse')]):
             warehouse_per_location[warehouse.storage_location.id] = (
                 warehouse.id)
+            warehouse_per_location[warehouse.input_location.id] = (
+                warehouse.id)
+            warehouse_per_location[warehouse.output_location.id] = (
+                warehouse.id)
         res = {}
         for location in instances:
             res[location.id] = None
@@ -67,8 +71,6 @@ class Location(ModelSQL, ModelView):
         found_warehouse_ids = []
         storage_location_ids = []
         for location in warehouse_child_locations:
-            if location.id != location.parent.storage_location.id:
-                continue
             storage_location_ids.append(location.id)
             found_warehouse_ids.append(location.parent.id)
 
