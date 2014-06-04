@@ -10,8 +10,9 @@ class Location(ModelSQL, ModelView):
     __name__ = 'stock.location'
 
     warehouse = fields.Function(fields.Many2One('stock.location', 'Warehouse',
-            on_change_with=['parent'],
-            states={'invisible': Not(In(Eval('type'), ['storage', 'view']))},
+            states={
+                'invisible': Not(In(Eval('type'), ['storage', 'view']))
+                },
             depends=['type']),
         'get_warehouse', searcher='search_warehouse')
 
@@ -23,6 +24,7 @@ class Location(ModelSQL, ModelView):
                 'The Storage location must be unique.'),
             ]
 
+    @fields.depends('parent')
     def on_change_with_warehouse(self, name=None):
         if (not self.id or self.type not in ('storage', 'view') or
                 not self.parent):
