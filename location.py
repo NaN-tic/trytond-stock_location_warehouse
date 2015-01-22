@@ -24,7 +24,7 @@ class Location(ModelSQL, ModelView):
                 'The Storage location must be unique.'),
             ]
 
-    @fields.depends('parent')
+    @fields.depends('type', 'parent')
     def on_change_with_warehouse(self, name=None):
         if (not self.id or self.type not in ('storage', 'view') or
                 not self.parent):
