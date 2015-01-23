@@ -1,3 +1,5 @@
+* Remove repeated type field in location's list view
+
 Version 3.4.1 - 2015-01-22
 * Add 'type' in on_change_with_warehouse depends
 
