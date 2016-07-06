@@ -1,6 +1,6 @@
 #The COPYRIGHT file at the top level of this repository contains the full
 #copyright notices and license terms.
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, ModelSQL, fields, Unique
 from trytond.pyson import Eval, In, Not
 
 __all__ = ['Location']
@@ -19,8 +19,9 @@ class Location(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(Location, cls).__setup__()
+        t = cls.__table__()
         cls._sql_constraints += [
-            ('storage_location_unique', 'UNIQUE(storage_location)',
+            ('storage_location_unique', Unique(t, t.storage_location),
                 'The Storage location must be unique.'),
             ]
 
