@@ -80,6 +80,7 @@ class Location(ModelSQL, ModelView):
         for location in cls.search([
                 ('parent', 'child_of', storage_location_ids),
                 ]):
-            if location.warehouse.id in found_warehouse_ids:
+            if (location.warehouse
+                    and location.warehouse.id in found_warehouse_ids):
                 warehouse_location_ids.append(location.id)
         return [('id', 'in', warehouse_location_ids)]
